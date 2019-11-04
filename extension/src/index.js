@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./client/index.css";
-import * as serviceWorker from "./client/serviceWorker";
+import "./index.css";
+import * as serviceWorker from "./serviceWorker";
 
-// import App from "./client/app";
+// import App from "./app";
 
-// import DataProvider from "./client/components/utils/DataProvider";
+// import DataProvider from "./components/utils/DataProvider";
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
