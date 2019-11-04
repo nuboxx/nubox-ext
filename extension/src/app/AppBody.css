@@ -1,0 +1,26 @@
+.accordion {
+  height: 220px;
+  overflow-y: scroll;
+}
+.accordion .card {
+  box-shadow: none;
+}
+.accordion .card-header {
+  padding: 0;
+  height: 45px !important;
+  background: white;
+}
+.accordion .card-header:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+.accordion .btn-link {
+  width: 100%;
+  text-transform: none;
+  color: rgb(23, 33, 40);
+  margin: 0;
+  padding: 0 15px;
+  height: 100%;
+}
+.accordion .btn-link:hover {
+  text-decoration: none !important;
+}
