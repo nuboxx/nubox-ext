@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 
+import Api from "../../utils/Api";
 import Form from "../../utils/Form";
 import { DataContext } from "../../utils/DataProvider";
 
@@ -33,6 +34,38 @@ const Revoke = props => {
     });
   };
 
+  const onClick = async () => {
+    try {
+      const result = await Api.revoke({
+        label: ctx.revoke.label,
+        bvk: ctx.revoke.bob_verifying_key
+      });
+
+      if (result && result.revoke) {
+      }
+    } catch (err) {
+      console.error(err);
+      alert(err.message);
+    }
+  };
+
+  const autofillClick = async () => {
+    try {
+      const result = await Api.getBobKeys();
+      if (result && result.bek && result.bvk) {
+        ctx.setInput(input => {
+          const e = { ...input };
+          e.revoke.bob_verifying_key = result.bvk;
+
+          return e;
+        });
+      }
+    } catch (err) {
+      console.error(err);
+      alert(err.message);
+    }
+  };
+
   return (
     <Form
       onChange={onChange}
@@ -40,6 +73,8 @@ const Revoke = props => {
       buttonText="Revoke"
       autofill={true}
       disabled={disabled}
+      onClick={onClick}
+      autofillClick={autofillClick}
     />
   );
 };

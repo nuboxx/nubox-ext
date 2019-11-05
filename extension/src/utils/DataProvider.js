@@ -21,13 +21,13 @@ const DataProvider = props => {
     },
     grant: {
       label: "",
-      encrypting_key: "",
-      verifying_key: "",
+      bob_encrypting_key: "",
+      bob_verifying_key: "",
       grant_expire: ""
     },
     revoke: {
       label: "",
-      verifying_key: ""
+      bob_verifying_key: ""
     }
   });
 

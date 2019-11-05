@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 
+import Api from "../../utils/Api";
 import Form from "../../utils/Form";
 import { DataContext } from "../../utils/DataProvider";
 
@@ -33,13 +34,35 @@ const Decrypt = props => {
     });
   };
 
+  const onClick = async () => {
+    try {
+      const result = await Api.decrypt({
+        encrypted: ctx.decrypt.encrypted,
+        label: ctx.decrypt.label
+      });
+
+      if (result && result.plaintext) {
+        ctx.setInput(input => {
+          const e = { ...input };
+          e.decrypt.plaintext = result.plaintext;
+
+          return e;
+        });
+      }
+    } catch (err) {
+      console.error(err);
+      alert(err.message);
+    }
+  };
+
   return (
     <Form
       onChange={onChange}
       keys={ctx.input.decrypt}
       buttonText="Decrypt"
-      disabledKey="plaintext"
+      disabledKey={["plaintext"]}
       disabled={disabled}
+      onClick={onClick}
     />
   );
 };

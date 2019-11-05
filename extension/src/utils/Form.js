@@ -24,6 +24,8 @@ const toCapitalize = text => {
 const Form = ({
   keys,
   onChange,
+  onClick,
+  autofillClick,
   buttonText,
   disabledKey,
   autofill,
@@ -44,8 +46,8 @@ const Form = ({
             key={index}
             size="sm"
             label={toCapitalize(key)}
-            state={keys[key]}
-            disabled={key === disabledKey ? true : false}
+            value={keys[key]}
+            disabled={disabledKey && disabledKey.includes(key)}
             onChange={e => onChange(key, e.target.value, e.target)}
           />
         )
@@ -57,6 +59,7 @@ const Form = ({
             style={{ margin: "0", padding: "7px 25px" }}
             className={cx(mdb.btn, mdb["btn-success"])}
             disabled={disabled ? disabled : false}
+            onClick={onClick}
           >
             {buttonText}
           </Button>
@@ -67,6 +70,7 @@ const Form = ({
               variant="outline-success"
               style={{ margin: "0", padding: "5px 15px" }}
               className={cx(mdb.btn, mdb["btn-outline-success"])}
+              onClick={autofillClick}
             >
               Autofill Bob
             </Button>

@@ -7,13 +7,13 @@ const nuBoxx = {
 
   getBobKeys: async () => {},
 
-  encrypt: async (plaintext, label) => {},
+  encrypt: async ({ plaintext, label }) => {},
 
-  decrypt: async (encrypted, label) => {},
+  decrypt: async ({ encrypted, label }) => {},
 
-  grant: async (label, beb, bvk, expiration) => {},
+  grant: async ({ label, expiration }) => {},
 
-  revoke: async (label, bvk) => {}
+  revoke: async ({ label, bvk }) => {}
 };
 
 window.nuBoxx = nuBoxx;
