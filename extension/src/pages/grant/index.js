@@ -1,8 +1,5 @@
 import React, { useContext } from "react";
 
-import { MDBBtn } from "mdbreact";
-import { Card } from "react-bootstrap";
-
 import Form from "../../utils/Form";
 import { DataContext } from "../../utils/DataProvider";
 
@@ -19,16 +16,12 @@ const Grant = props => {
   };
 
   return (
-    <Card>
-      <Card.Body>
-        <Form
-          keys={ctx.input.grant}
-          buttonText="Grant"
-          onChange={onChange}
-          autofill={true}
-        />
-      </Card.Body>
-    </Card>
+    <Form
+      keys={ctx.input.grant}
+      buttonText="Grant"
+      onChange={onChange}
+      autofill={true}
+    />
   );
 };
 

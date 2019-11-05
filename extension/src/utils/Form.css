@@ -1,0 +1,74 @@
+.md-form {
+  position: relative;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.md-form input[type="text"]:not(.browser-default) {
+  box-sizing: content-box;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #ced4da;
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.md-form .form-control {
+  margin: 0 0 0.5rem;
+  padding: 0.6rem 0 0.4rem;
+  height: auto;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  background-clip: padding-box;
+}
+
+.form-control:focus {
+  color: #495057;
+}
+
+.md-form input[type="text"]:not(.browser-default):focus:not([readonly]):focus {
+  border-bottom: 1px solid #4285f4;
+  box-shadow: 0 1px 0 0 #4285f4;
+}
+
+.md-form label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease-out, color 0.2s ease-out,
+    -webkit-transform 0.2s ease-out;
+  transform-origin: 0 100%;
+  transform: translateY(12px);
+  cursor: text;
+  color: #757575;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.md-form label.active {
+  transform: translateY(-14px) scale(0.8);
+}
+
+.md-form input[type="text"]:not(.browser-default) + label:after {
+  content: "";
+  position: absolute;
+  top: 65px;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.2s ease-out, color 0.2s ease-out;
+}
+
+.md-form
+  input[type="text"]:not(.browser-default):focus:not([readonly])
+  + label {
+  color: #4285f4;
+}

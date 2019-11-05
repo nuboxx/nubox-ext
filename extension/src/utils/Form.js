@@ -1,7 +1,12 @@
 import React from "react";
 
-import { MDBInput, MDBBtn } from "mdbreact";
-import { Button, Row, Col } from "react-bootstrap";
+import cx from "classnames";
+import { MDBInput } from "mdbreact";
+import { Button, Card, Row, Col } from "react-bootstrap";
+
+import "./Form.css";
+import bootstrap from "../assets/css/bootstrap.module.css";
+import mdb from "../assets/css/mdb.module.css";
 
 const toCapitalize = text => {
   const e = text.split("_");
@@ -15,36 +20,43 @@ const toCapitalize = text => {
 };
 
 const Form = ({ keys, onChange, buttonText, disabledKey, autofill }) => (
-  <div>
-    {Object.keys(keys).map((key, index) => (
-      <MDBInput
-        key={index}
-        size="sm"
-        label={toCapitalize(key)}
-        state={keys[key]}
-        disabled={key === disabledKey ? true : false}
-        onChange={e => onChange(key, e.target.value)}
-      />
-    ))}
-    <Row>
-      <Col className="pr-0">
-        <Button variant="success" style={{ margin: "0", padding: "7px 25px" }}>
-          {buttonText}
-        </Button>
-      </Col>
-      {autofill === true ? (
-        <Col className="pl-0">
-          <MDBBtn
-            outline
-            color="success"
-            style={{ margin: "0", padding: "5px 15px" }}
+  <Card style={{ boxShadow: "none" }} className={mdb.card}>
+    <Card.Body className={bootstrap["card-body"]}>
+      {Object.keys(keys).map((key, index) => (
+        <MDBInput
+          key={index}
+          size="sm"
+          label={toCapitalize(key)}
+          state={keys[key]}
+          disabled={key === disabledKey ? true : false}
+          onChange={e => onChange(key, e.target.value)}
+        />
+      ))}
+      <Row className={bootstrap.row}>
+        <Col className={cx(bootstrap.col, bootstrap["pr-0"])}>
+          <Button
+            variant="success"
+            style={{ margin: "0", padding: "7px 25px" }}
+            className={cx(mdb.btn, mdb["btn-success"])}
           >
-            Autofill Bob
-          </MDBBtn>
+            {buttonText}
+          </Button>
         </Col>
-      ) : null}
-    </Row>
-  </div>
+        {autofill === true ? (
+          <Col className={cx(bootstrap.col, bootstrap["pl-0"])}>
+            <Button
+              outline
+              variant="outline-success"
+              style={{ margin: "0", padding: "5px 15px" }}
+              className={cx(mdb.btn, mdb["btn-outline-success"])}
+            >
+              Autofill Bob
+            </Button>
+          </Col>
+        ) : null}
+      </Row>
+    </Card.Body>
+  </Card>
 );
 
 export default Form;

@@ -1,7 +1,5 @@
 import React, { useContext } from "react";
 
-import { Card } from "react-bootstrap";
-
 import Form from "../../utils/Form";
 import { DataContext } from "../../utils/DataProvider";
 
@@ -18,16 +16,12 @@ const Encrypt = props => {
   };
 
   return (
-    <Card>
-      <Card.Body>
-        <Form
-          onChange={onChange}
-          keys={ctx.input.encrypt}
-          buttonText="Encrypt"
-          disabledKey="encrypted"
-        />
-      </Card.Body>
-    </Card>
+    <Form
+      onChange={onChange}
+      keys={ctx.input.encrypt}
+      buttonText="Encrypt"
+      disabledKey="encrypted"
+    />
   );
 };
 

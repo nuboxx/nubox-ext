@@ -1,7 +1,5 @@
 import React, { useContext } from "react";
 
-import { Card } from "react-bootstrap";
-
 import Form from "../../utils/Form";
 import { DataContext } from "../../utils/DataProvider";
 
@@ -18,15 +16,11 @@ const Bob = props => {
   };
 
   return (
-    <Card>
-      <Card.Body>
-        <Form
-          onChange={onChange}
-          keys={ctx.input.bob}
-          buttonText="Get Bob's keys"
-        />
-      </Card.Body>
-    </Card>
+    <Form
+      onChange={onChange}
+      keys={ctx.input.bob}
+      buttonText="Get Bob's keys"
+    />
   );
 };
 

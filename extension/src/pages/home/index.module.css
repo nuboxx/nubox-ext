@@ -1,16 +1,20 @@
-.nuboxx .card {
+.card {
   box-shadow: none;
+  border: 0;
 }
-.nuboxx .card-header {
+
+.card-header {
   padding: 0;
   height: 45px !important;
   background: white;
   border-bottom: 0;
 }
-.nuboxx .card-header:hover {
+
+.card-header:hover {
   background: rgba(0, 0, 0, 0.03);
 }
-.nuboxx .btn-link {
+
+.btn-link {
   width: 100%;
   text-transform: none;
   color: rgb(23, 33, 40);
@@ -18,6 +22,8 @@
   padding: 0 15px;
   height: 100%;
 }
-.nuboxx .btn-link:hover {
+
+.btn-link:hover {
   text-decoration: none !important;
+  color: rgb(23, 33, 40);
 }

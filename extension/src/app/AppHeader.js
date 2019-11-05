@@ -8,6 +8,7 @@ import { DataConsumer } from "../utils/DataProvider";
 import LogoImg from "../assets/logo_128x128.png";
 
 import "./AppHeader.css";
+import bootstrap from "../assets/css/bootstrap.module.css";
 
 import config from "../config.json";
 
@@ -33,11 +34,14 @@ const AppHeader = props => (
   <DataConsumer>
     {ctx =>
       ctx.page === "home" ? (
-        <Card.Header>
+        <Card.Header className={bootstrap["card-header"]}>
           <Header />
         </Card.Header>
       ) : (
-        <Card.Header style={{ padding: "0" }}>
+        <Card.Header
+          style={{ padding: "0" }}
+          className={bootstrap["card-header"]}
+        >
           <div className="nuboxx">
             <AppCard
               buttonText={<AppCardHeader icon="angle-left" text="Back" />}

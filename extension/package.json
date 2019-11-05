@@ -1,6 +1,7 @@
 {
   "scripts": {
     "start": "react-scripts start",
+    "prebuild": "./scripts/prebuild.sh",
     "build": "INLINE_RUNTIME_CHUNK=false react-scripts build",
     "postbuild": "node scripts/postbuild.js",
     "test": "react-scripts test",
@@ -8,6 +9,7 @@
   },
   "dependencies": {
     "bootstrap-css-only": "^4.3.1",
+    "classnames": "^2.2.6",
     "date-fns": "^2.4.1",
     "mdbreact": "^4.21.0",
     "react": "^16.10.2",
