@@ -34,6 +34,7 @@ const Form = ({
       {Object.keys(keys).map((key, index) =>
         key.indexOf("expire") !== -1 ? (
           <FormDate
+            key={key}
             date={keys[key]}
             setDate={date => onChange(key, date)}
             label={toCapitalize(key)}
@@ -63,7 +64,6 @@ const Form = ({
         {autofill === true ? (
           <Col className={cx(bootstrap.col, bootstrap["pl-0"])}>
             <Button
-              outline
               variant="outline-success"
               style={{ margin: "0", padding: "5px 15px" }}
               className={cx(mdb.btn, mdb["btn-outline-success"])}

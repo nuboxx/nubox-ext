@@ -20,8 +20,8 @@ const Revoke = props => {
         target.classList.add("is-valid");
       }
 
-      const _disabled = Object.keys(e.bob).reduce((p, c) => {
-        const _value = e.decrypt[c];
+      const _disabled = Object.keys(e.revoke).reduce((p, c) => {
+        const _value = e.revoke[c];
         return (
           p &&
           (_value !== null && _value !== undefined && _value.trim().length > 0)

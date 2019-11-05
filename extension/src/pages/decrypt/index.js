@@ -20,7 +20,7 @@ const Decrypt = props => {
         target.classList.add("is-valid");
       }
 
-      const _disabled = Object.keys(e.bob).reduce((p, c) => {
+      const _disabled = Object.keys(e.decrypt).reduce((p, c) => {
         const _value = e.decrypt[c];
         return (
           p &&
