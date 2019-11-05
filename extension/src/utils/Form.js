@@ -4,6 +4,8 @@ import cx from "classnames";
 import { MDBInput } from "mdbreact";
 import { Button, Card, Row, Col } from "react-bootstrap";
 
+import FormDate from "./FormDate";
+
 import "./Form.css";
 import bootstrap from "../assets/css/bootstrap.module.css";
 import mdb from "../assets/css/mdb.module.css";
@@ -22,16 +24,24 @@ const toCapitalize = text => {
 const Form = ({ keys, onChange, buttonText, disabledKey, autofill }) => (
   <Card style={{ boxShadow: "none" }} className={mdb.card}>
     <Card.Body className={bootstrap["card-body"]}>
-      {Object.keys(keys).map((key, index) => (
-        <MDBInput
-          key={index}
-          size="sm"
-          label={toCapitalize(key)}
-          state={keys[key]}
-          disabled={key === disabledKey ? true : false}
-          onChange={e => onChange(key, e.target.value)}
-        />
-      ))}
+      {Object.keys(keys).map((key, index) =>
+        key.indexOf("expire") !== -1 ? (
+          <FormDate
+            date={keys[key]}
+            setDate={date => onChange(key, date)}
+            label={toCapitalize(key)}
+          />
+        ) : (
+          <MDBInput
+            key={index}
+            size="sm"
+            label={toCapitalize(key)}
+            state={keys[key]}
+            disabled={key === disabledKey ? true : false}
+            onChange={e => onChange(key, e.target.value)}
+          />
+        )
+      )}
       <Row className={bootstrap.row}>
         <Col className={cx(bootstrap.col, bootstrap["pr-0"])}>
           <Button

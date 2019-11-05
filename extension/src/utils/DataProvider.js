@@ -22,7 +22,8 @@ const DataProvider = props => {
     grant: {
       label: "",
       encrypting_key: "",
-      verifying_key: ""
+      verifying_key: "",
+      grant_expire: ""
     },
     revoke: {
       label: "",
