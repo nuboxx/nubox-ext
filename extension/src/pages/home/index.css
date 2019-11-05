@@ -1,19 +1,16 @@
-.accordion {
-  height: 220px;
-  overflow-y: scroll;
-}
-.accordion .card {
+.nuboxx .card {
   box-shadow: none;
 }
-.accordion .card-header {
+.nuboxx .card-header {
   padding: 0;
   height: 45px !important;
   background: white;
+  border-bottom: 0;
 }
-.accordion .card-header:hover {
+.nuboxx .card-header:hover {
   background: rgba(0, 0, 0, 0.03);
 }
-.accordion .btn-link {
+.nuboxx .btn-link {
   width: 100%;
   text-transform: none;
   color: rgb(23, 33, 40);
@@ -21,6 +18,6 @@
   padding: 0 15px;
   height: 100%;
 }
-.accordion .btn-link:hover {
+.nuboxx .btn-link:hover {
   text-decoration: none !important;
 }
