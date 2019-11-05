@@ -21,7 +21,14 @@ const toCapitalize = text => {
   return result.slice(0, result.length - 1);
 };
 
-const Form = ({ keys, onChange, buttonText, disabledKey, autofill }) => (
+const Form = ({
+  keys,
+  onChange,
+  buttonText,
+  disabledKey,
+  autofill,
+  disabled
+}) => (
   <Card style={{ boxShadow: "none" }} className={mdb.card}>
     <Card.Body className={bootstrap["card-body"]}>
       {Object.keys(keys).map((key, index) =>
@@ -38,7 +45,7 @@ const Form = ({ keys, onChange, buttonText, disabledKey, autofill }) => (
             label={toCapitalize(key)}
             state={keys[key]}
             disabled={key === disabledKey ? true : false}
-            onChange={e => onChange(key, e.target.value)}
+            onChange={e => onChange(key, e.target.value, e.target)}
           />
         )
       )}
@@ -48,6 +55,7 @@ const Form = ({ keys, onChange, buttonText, disabledKey, autofill }) => (
             variant="success"
             style={{ margin: "0", padding: "7px 25px" }}
             className={cx(mdb.btn, mdb["btn-success"])}
+            disabled={disabled ? disabled : false}
           >
             {buttonText}
           </Button>
