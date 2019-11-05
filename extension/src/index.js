@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 
 import App from "./app";
 import DataProvider from "./utils/DataProvider";
+import Api from "./utils/Api";
+
 import * as serviceWorker from "./serviceWorker";
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
