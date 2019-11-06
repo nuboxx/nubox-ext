@@ -4,18 +4,23 @@
   border-radius: 50%;
   display: inline-block;
 }
+
 .online-dot {
   background-color: #28a745;
 }
+
 .offline-dot {
   background-color: #dc3545;
 }
+
 .online {
   color: #28a745;
 }
+
 .offline {
   color: #dc3545;
 }
+
 .offline,
 .online {
   margin-top: 5px;
@@ -25,7 +30,4 @@
   visibility: hidden;
   position: absolute;
   right: 60px;
-}
-::-webkit-scrollbar {
-  display: none;
 }

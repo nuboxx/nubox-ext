@@ -6,12 +6,12 @@ import { Button, Card, Row, Col } from "react-bootstrap";
 
 import { DataContext } from "../../utils/DataProvider";
 
-import bootstrap from "../../assets/css/bootstrap.module.css";
+import appCss from "../../index.module.css";
 import mdb from "../../assets/css/mdb.module.css";
 import css from "./index.module.css";
 
 const AppCard = ({ buttonText, onClick }) => (
-  <Card className={cx(bootstrap.card, css.card)}>
+  <Card className={cx(appCss.card, css.card)}>
     <Card.Header className={cx(mdb["card-header"], css["card-header"])}>
       <Button
         variant="link"
@@ -25,18 +25,18 @@ const AppCard = ({ buttonText, onClick }) => (
 );
 
 const AppCardHeader = ({ icon, text }) => (
-  <Row className={bootstrap.row}>
+  <Row className={appCss.row}>
     <Col
       md="2"
-      className={cx(bootstrap["col-md-2"], bootstrap["text-right"])}
-      style={{ flex: "0 0 19%", maxWidth: "19%" }}
+      className={cx(appCss["col-md-2"], appCss["text-right"])}
+      style={{ flex: "0 0 9%", maxWidth: "9%" }}
     >
       <MDBIcon icon={icon} />
     </Col>
     <Col
       md="10"
-      className={cx(bootstrap["col-md-10"], bootstrap["text-left"])}
-      style={{ flex: "0 0 81%", maxWidth: "81%" }}
+      className={cx(appCss["col-md-10"], appCss["text-left"])}
+      style={{ flex: "0 0 71%", maxWidth: "71%" }}
     >
       {text}
     </Col>

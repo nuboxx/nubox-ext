@@ -7,7 +7,7 @@ import { Button, Card, Row, Col } from "react-bootstrap";
 import FormDate from "./FormDate";
 
 import "./Form.css";
-import bootstrap from "../assets/css/bootstrap.module.css";
+import appCss from "../index.module.css";
 import mdb from "../assets/css/mdb.module.css";
 
 const toCapitalize = text => {
@@ -32,7 +32,7 @@ const Form = ({
   disabled
 }) => (
   <Card style={{ boxShadow: "none" }} className={mdb.card}>
-    <Card.Body className={bootstrap["card-body"]}>
+    <Card.Body className={appCss["card-body"]}>
       {Object.keys(keys).map((key, index) =>
         key.indexOf("expire") !== -1 ? (
           <FormDate
@@ -52,8 +52,8 @@ const Form = ({
           />
         )
       )}
-      <Row className={bootstrap.row}>
-        <Col className={cx(bootstrap.col, bootstrap["pr-0"])}>
+      <Row className={appCss.row}>
+        <Col className={cx(appCss.col, appCss["pr-0"])}>
           <Button
             variant="success"
             style={{ margin: "0", padding: "7px 25px" }}
@@ -65,10 +65,10 @@ const Form = ({
           </Button>
         </Col>
         {autofill === true ? (
-          <Col className={cx(bootstrap.col, bootstrap["pl-0"])}>
+          <Col className={cx(appCss.col, appCss["pl-0"])}>
             <Button
               variant="outline-success"
-              style={{ margin: "0", padding: "5px 15px" }}
+              style={{ margin: "0", padding: "5px 10px" }}
               className={cx(mdb.btn, mdb["btn-outline-success"])}
               onClick={autofillClick}
             >

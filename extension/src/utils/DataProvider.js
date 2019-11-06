@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
+import Cache from "./Cache";
 
 const DataContext = React.createContext();
 
@@ -30,6 +32,16 @@ const DataProvider = props => {
       bob_verifying_key: ""
     }
   });
+  const [app, setApp] = useState({});
+
+  useEffect(() => {
+    const fn = async () => {
+      const _app = await Cache.get();
+      setApp(_app);
+    };
+
+    fn();
+  }, []);
 
   return (
     <DataContext.Provider
@@ -37,7 +49,9 @@ const DataProvider = props => {
         page,
         setPage,
         input,
-        setInput
+        setInput,
+        app,
+        setApp
       }}
     >
       {props.children}

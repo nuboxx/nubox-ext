@@ -1,31 +1,30 @@
 import React from "react";
 
+import cx from "classnames";
 import { Card } from "react-bootstrap";
 
+import AppItems from "./AppItems";
 import { AppCard, AppCardHeader } from "../pages/home";
 import { DataConsumer } from "../utils/DataProvider";
 
 import LogoImg from "../assets/logo_128.png";
 
-import "./AppHeader.css";
-import bootstrap from "../assets/css/bootstrap.module.css";
+import css from "./AppHeader.module.css";
+import appCss from "../index.module.css";
 
 import config from "../config.json";
 
 const Header = () => (
   <div>
-    <img
-      className="card-img-top"
-      src={LogoImg}
-      style={{ width: "32px", height: "32px" }}
-      alt=""
-    />
-    <span>&nbsp;&nbsp;{config.app.name}</span>
-    <span className="online">
-      <span className="dot online-dot"></span>&nbsp;Online
+    <img src={LogoImg} style={{ width: "32px", height: "32px" }} alt="" />
+    <span style={{ position: "relative", top: "-10px" }}>
+      &nbsp;&nbsp;{config.app.name}
     </span>
-    <span className="offline">
-      <span className="dot offline-dot"></span>&nbsp;Offline
+    <span className={css.online}>
+      <span className={cx(css.dot, css["online-dot"])}></span>&nbsp;Online
+    </span>
+    <span className={css.offline}>
+      <span className={cx(css.dot, css["offline-dot"])}></span>&nbsp;Offline
     </span>
   </div>
 );
@@ -34,13 +33,16 @@ const AppHeader = props => (
   <DataConsumer>
     {ctx =>
       ctx.page === "home" ? (
-        <Card.Header className={bootstrap["card-header"]}>
-          <Header />
-        </Card.Header>
+        <div>
+          <Card.Header className={appCss["nubox-card-header"]}>
+            <Header />
+          </Card.Header>
+          <AppItems />
+        </div>
       ) : (
         <Card.Header
           style={{ padding: "0" }}
-          className={bootstrap["card-header"]}
+          className={appCss["nubox-card-header"]}
         >
           <AppCard
             buttonText={<AppCardHeader icon="angle-left" text="Back" />}

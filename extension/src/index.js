@@ -6,6 +6,7 @@ import DataProvider from "./utils/DataProvider";
 
 import * as serviceWorker from "./serviceWorker";
 
+import "./index.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const NuBoxx = props => (
