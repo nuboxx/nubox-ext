@@ -17,7 +17,7 @@
     "128": "logo_128x128.png"
   },
   "browser_action": {
-    "default_title": "nuBoxx",
+    "default_title": "nuBox",
     "default_popup": "index.html",
     "default_icon": {
       "128": "logo_128x128.png"
