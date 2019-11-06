@@ -1,5 +1,5 @@
 {
-  "name": "nuboxx-ext",
+  "name": "nubox-ext",
   "version": "1.0.0",
   "description": "",
   "homepage": "/",
@@ -10,11 +10,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nuboxx/nuboxx-ext.git"
+    "url": "git+https://github.com/nuboxx/nubox-ext.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nuboxx/nuboxx-ext/issues"
+    "url": "https://github.com/nuboxx/nubox-ext/issues"
   },
   "devDependencies": {
     "eslint-config-react-app": "^5.0.2",
