@@ -5,7 +5,7 @@ import { Card } from "react-bootstrap";
 import { AppCard, AppCardHeader } from "../pages/home";
 import { DataConsumer } from "../utils/DataProvider";
 
-import LogoImg from "../assets/logo_128x128.png";
+import LogoImg from "../assets/logo_128.png";
 
 import "./AppHeader.css";
 import bootstrap from "../assets/css/bootstrap.module.css";
