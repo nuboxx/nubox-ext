@@ -42,12 +42,10 @@ const AppHeader = props => (
           style={{ padding: "0" }}
           className={bootstrap["card-header"]}
         >
-          <div className="nuboxx">
-            <AppCard
-              buttonText={<AppCardHeader icon="angle-left" text="Back" />}
-              onClick={() => ctx.setPage("home")}
-            />
-          </div>
+          <AppCard
+            buttonText={<AppCardHeader icon="angle-left" text="Back" />}
+            onClick={() => ctx.setPage("home")}
+          />
         </Card.Header>
       )
     }

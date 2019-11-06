@@ -1,6 +1,6 @@
-// Expose the nuBoxx apis.
+// Expose the nuBox apis.
 
-const nuBoxx = {
+const nuBox = {
   checkForExtension: async () => {},
 
   approve: async () => {},
@@ -16,6 +16,6 @@ const nuBoxx = {
   revoke: async ({ label, bvk }) => {}
 };
 
-window.nuBoxx = nuBoxx;
+window.nuBox = nuBox;
 
-export default nuBoxx;
+export default nuBox;
