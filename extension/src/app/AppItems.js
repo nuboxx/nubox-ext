@@ -34,7 +34,29 @@ const AppItems = props => {
         try {
           const $ = cheerio.load(results[0]);
           const imgUrl = $("link[rel=icon]").attr("href");
-          setImg(imgUrl);
+
+          try {
+            new URL(imgUrl);
+            setImg(imgUrl);
+          } catch (err) {
+            // Host missing. Add it.
+            window.chrome.tabs.query(
+              {
+                currentWindow: true,
+                active: true
+              },
+              tabs => {
+                try {
+                  const _url = new URL(tabs[0].url);
+                  setImg(
+                    `${_url.origin}${
+                      imgUrl.startsWith("/") ? "" : "/"
+                    }${imgUrl}`
+                  );
+                } catch (err) {}
+              }
+            );
+          }
         } catch (err) {}
       }
     );
