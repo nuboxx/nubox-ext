@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-import cheerio from "cheerio";
 import { MDBIcon } from "mdbreact";
 import { Card } from "react-bootstrap";
 import ScrollArea from "react-scrollbar";
+
+import Extension from "../utils/Extension";
 
 import css from "./AppItems.module.css";
 import appCss from "../index.module.css";
@@ -21,46 +22,11 @@ const AppItem = ({ img }) => (
 const AppItems = props => {
   const [img, setImg] = useState("");
 
-  if (window.chrome && window.chrome.tabs) {
-    const modifyDOM = () => {
-      return document.getElementsByTagName("head")[0].innerHTML;
-    };
-
-    window.chrome.tabs.executeScript(
-      {
-        code: `(${modifyDOM})();`
-      },
-      results => {
-        try {
-          const $ = cheerio.load(results[0]);
-          const imgUrl = $("link[rel=icon]").attr("href");
-
-          try {
-            new URL(imgUrl);
-            setImg(imgUrl);
-          } catch (err) {
-            // Host missing. Add it.
-            window.chrome.tabs.query(
-              {
-                currentWindow: true,
-                active: true
-              },
-              tabs => {
-                try {
-                  const _url = new URL(tabs[0].url);
-                  setImg(
-                    `${_url.origin}${
-                      imgUrl.startsWith("/") ? "" : "/"
-                    }${imgUrl}`
-                  );
-                } catch (err) {}
-              }
-            );
-          }
-        } catch (err) {}
-      }
-    );
-  }
+  useEffect(() => {
+    Extension.getFavicon()
+      .then(setImg)
+      .catch(console.error);
+  }, []);
 
   return (
     <ScrollArea
