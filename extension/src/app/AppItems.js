@@ -38,7 +38,9 @@ const AppItems = ({ items }) => {
     Extension.getFavicon()
       .then(setImg)
       .catch(console.error);
+  }, []);
 
+  useEffect(() => {
     if (
       window.chrome.browserAction &&
       Array.isArray(items) &&
@@ -51,7 +53,7 @@ const AppItems = ({ items }) => {
         text: items.length.toString()
       });
     }
-  }, []);
+  }, [items]);
 
   return (
     <ScrollArea
