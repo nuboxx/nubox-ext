@@ -51,6 +51,16 @@
   padding-left: 15px;
 }
 
+.col-md-2 {
+  flex: 0 0 9%;
+  max-width: 9%;
+}
+
+.col-md-10 {
+  flex: 0 0 70%;
+  max-width: 70%;
+}
+
 .pr-0 {
   padding-right: 0 !important;
 }

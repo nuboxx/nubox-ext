@@ -26,18 +26,10 @@ const AppCard = ({ buttonText, onClick }) => (
 
 const AppCardHeader = ({ icon, text }) => (
   <Row className={appCss.row}>
-    <Col
-      md="2"
-      className={cx(appCss["col-md-2"], appCss["text-right"])}
-      style={{ flex: "0 0 9%", maxWidth: "9%" }}
-    >
+    <Col md="2" className={cx(appCss["col-md-2"], appCss["text-right"])}>
       <MDBIcon icon={icon} />
     </Col>
-    <Col
-      md="10"
-      className={cx(appCss["col-md-10"], appCss["text-left"])}
-      style={{ flex: "0 0 71%", maxWidth: "71%" }}
-    >
+    <Col md="10" className={cx(appCss["col-md-10"], appCss["text-left"])}>
       {text}
     </Col>
   </Row>

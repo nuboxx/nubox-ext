@@ -29,6 +29,14 @@ const Header = () => (
   </div>
 );
 
+const items = [
+  { label: "hello1", bvk: "bvk1" },
+  { label: "hello2", bvk: "bvk2" },
+  { label: "hello3", bvk: "bvk3" },
+  { label: "hello4", bvk: "bvk4" },
+  { label: "hello5", bvk: "bvk5" }
+];
+
 const AppHeader = props => (
   <DataConsumer>
     {ctx =>
@@ -37,7 +45,7 @@ const AppHeader = props => (
           <Card.Header className={appCss["nubox-card-header"]}>
             <Header />
           </Card.Header>
-          <AppItems />
+          <AppItems items={items} />
         </div>
       ) : (
         <Card.Header
